@@ -11,7 +11,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 from types import ModuleType
-from traceback import print_exception
+from traceback import print_exception, format_exc
 import importlib
 
 from transdoc import transform
@@ -123,9 +123,10 @@ def main(
 
     try:
         rules = collect_rules(load_rule_file(rule_file))
-    except Exception as e:
+    except Exception:
+        e = '\n'.join(map(lambda s: f"    {s}", format_exc().splitlines()))
         errors.append(
-            f"Error when importing rule file '{rule_file}':\n    {e}")
+            f"Error when importing rule file '{rule_file}':\n{e}")
 
     if len(errors):
         return display_error_list(errors)
