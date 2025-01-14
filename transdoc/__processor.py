@@ -14,7 +14,6 @@ from types import ModuleType
 from traceback import print_exception, format_exc
 import importlib
 
-from transdoc import transform
 from transdoc.__consts import VERSION
 from transdoc.errors import TransdocTransformationError
 from transdoc.__collect_rules import collect_rules

@@ -7,11 +7,11 @@ Python function calls.
 __all__ = [
     '__version__',
     'main',
-    'transform',
+    'TransdocHandler',
     'Rule',
 ]
 
 from .__consts import VERSION as __version__
-from .__transformer import transform
+from .handlers import TransdocHandler
 from .__rule import Rule
 from .__processor import main
