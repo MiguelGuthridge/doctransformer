@@ -32,8 +32,7 @@ def attributes(
     object: Optional[str] = None,
     *,
     filter: Optional[Callable[[str, Any], bool]] = None,
-    formatter: Optional[Callable[[str, Optional[str], str], str]]
-        = None,
+    formatter: Optional[Callable[[str, Optional[str], str], str]] = None,
 ) -> str:
     """
     Generate a list of attributes for an object.
